@@ -1,0 +1,59 @@
+//Main class for comparable and class Animal
+
+package CollectionFrameworks;
+
+public class Animal implements Comparable<Animal> {
+    int age;
+    String name;
+    int weight;
+
+    public Animal(int weight, String name, int age) {
+        this.weight = weight;
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                '}'+"\n";
+    }
+
+    @Override
+    public int compareTo(Animal that) {
+        return this.age- that.age;
+    }
+}
+
+// comparable using
+
+package CollectionFrameworks;
+
+import java.awt.*;
+import java.util.*;
+import java.util.List;
+
+public class LearnComparableAndComparator {
+    public static void main(String[] args) {
+
+        Animal a1 = new Animal(4,"leo",10);
+        Animal a2 = new Animal(3,"bruno",10);
+        Animal a3 = new Animal(2,"max",10);
+        Animal a4 = new Animal(1,"don",10);
+
+                List<Animal> dogs = new ArrayList<>();
+                dogs.add(a1);
+                dogs.add(a2);
+                dogs.add(a3);
+                dogs.add(a4);
+        System.out.println(dogs);
+        Collections.sort(dogs);
+
+    }
+
+
+
+}
